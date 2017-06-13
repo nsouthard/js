@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function addTwoNumbers(numberOne, numberTwo) {
+        return numberOne + numberTwo;
+    }
+    console.log(addTwoNumbers(100, 99));
+
+
+
+    sum = 0
+    var numbers = [5, 23, 98, 234, 1, 0, 3, 177];
+    for (var i = 0; i < numbers.length; i++) {
+      console.log(numbers[i]);
+      sum += numbers
+    }
+    
+    console.log(sum)
+    console.log(sum/numbers.length)
+
+
+    function Book(title, author, year) {
+      this.title = title;
+      this.author = author;
+      this.year = year;
+      this.printDetails = function() {
+        return this.title + " was written by " + this.author + " in " + this.year;
+      };
+    }
+
+    var goosebumps = new Book("Goosebumps", "R.L. Stein", "1997");
+    console.log(goosebumps.printDetails());
+
+
+  </script>
+
+</body>
+</html>
