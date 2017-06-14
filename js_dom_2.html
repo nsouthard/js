@@ -9,7 +9,7 @@
   .hidden {
     display: none;
   }
-  
+
 </style>
 </head>
 
@@ -20,11 +20,18 @@
 
   <button onmouseup="hideCompletedTasks()">Hide Complete Tasks</button>
 
+  <button onmouseup="showAllTasks()">Show All Tasks</button>
+
+  <h4>Numnber of Tasks Completed: <span id="num-complete">0</span></h4>
+
 </body>
 
 <script>
   function toggleComplete(ptag) {
     ptag.classList.toggle("complete");
+    var completedTasks = document.querySelectorAll(".complete");
+    var countTag = document.querySelector("#num-complete");
+    countTag.innerHTML = completedTasks.length;
   }
 
   function hideCompletedTasks() {
@@ -32,6 +39,14 @@
     for (var i = 0; i < completedTasks.length; i++) {
       var completedTask = completedTasks[i];
       completedTask.classList.add("hidden");
+    }
+  }
+
+  function showAllTasks() {
+    var  completedTasks = document.querySelectorAll(".complete");
+    for (var i = 0; i < completedTasks.length; i++) {
+      var completedTask = completedTasks[i];
+      completedTask.classList.remove("hidden");
     }
   }
 
